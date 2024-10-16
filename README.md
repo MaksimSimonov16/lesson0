@@ -1,9 +1,11 @@
-my_list = [42, 69, 322, 13, 0, 99, -5, 9, 8, 7, -6, 5]
-a = 0
-while a < len(my_list):
-    if my_list[a] < 0:
-        break
-    if my_list[a] > 0:
-        print(my_list[a])
+def get_matrix (n, m, value):
+    matrix = []
+    for i in range(n):
+        matrix.append([]) # добавляем список
+        for j in range(m):
+            matrix[i].append(value) # Пишем в список значение
+    print(matrix)
+get_matrix(2, 2, 10)
+get_matrix(3, 5, 42)
+get_matrix(4, 2, 13)
 
-    a += 1
