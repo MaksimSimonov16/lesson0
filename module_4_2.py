@@ -6,3 +6,5 @@ def test_function():
 
 
 test_function()
+
+inner_function()
