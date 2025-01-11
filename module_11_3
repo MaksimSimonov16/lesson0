@@ -1,0 +1,21 @@
+import inspect
+
+
+def introspection_info(obj):
+    obj_info = {
+        'type': str(type(obj).__name__),
+        'attributes': [],
+        'methods': [],
+        'module': obj.__mod__,
+    }
+
+    if hasattr(obj, '__dict__'):
+        obj_info['attributes'] = list(obj.__dict__.keys())
+
+    obj_info['methods'] = [name for name, _ in inspect.getmembers(obj, callable) if not name.startswith('__')]
+
+    return obj_info
+
+
+number_info = introspection_info(42)
+print(number_info)
